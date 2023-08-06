@@ -1,0 +1,39 @@
+{
+  "name": "bluesketch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "HoJeong Go <seia@outlook.kr>; The Mutsuki Simp",
+  "license": "ISC",
+  "dependencies": {
+    "@vanilla-extract/css": "^1.12.0",
+    "modern-normalize": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.8",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": ">=6.0.0",
+    "@typescript-eslint/parser": ">=6.0.0",
+    "@vanilla-extract/vite-plugin": "^3.8.2",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": ">=8.0.0",
+    "eslint-config-xo": "^0.43.1",
+    "eslint-config-xo-typescript": "^1.0.1",
+    "eslint-plugin-perfectionist": "^1.5.1",
+    "eslint-plugin-react": "^7.33.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.8"
+  }
+}
