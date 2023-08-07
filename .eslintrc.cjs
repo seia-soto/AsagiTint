@@ -26,6 +26,14 @@ module.exports = {
 				'*.tsx',
 			],
 		},
+		{
+			rules: {
+				'perfectionist/sort-objects': 0,
+			},
+			files: [
+				'*.css.tsx',
+			],
+		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',

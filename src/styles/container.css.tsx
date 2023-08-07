@@ -2,9 +2,11 @@ import {style} from '@vanilla-extract/css';
 
 export const $container = style({
 	display: 'block',
-	padding: '8px 16px',
+	margin: '0 auto',
+
+	maxWidth: '1280px',
 });
 
-export const $navigationContainer = style([$container, {
-	padding: '20px',
+export const $contentContainer = style([$container, {
+	padding: '24px 20px',
 }]);
