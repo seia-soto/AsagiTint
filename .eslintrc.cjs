@@ -31,7 +31,7 @@ module.exports = {
 				'perfectionist/sort-objects': 0,
 			},
 			files: [
-				'*.css.tsx',
+				'*.css.ts',
 			],
 		},
 	],

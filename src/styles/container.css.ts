@@ -4,7 +4,7 @@ export const $container = style({
 	display: 'block',
 	margin: '0 auto',
 
-	maxWidth: '1280px',
+	maxWidth: '1100px',
 });
 
 export const $contentContainer = style([$container, {
