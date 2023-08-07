@@ -1,7 +1,9 @@
 import {type FC, type PropsWithChildren} from 'react';
+import {Link} from 'wouter';
 
 import {$container} from '../../styles/container.css';
-import {$fixedSide, $fixedSideDirector, $side, $sideItem, $sideItemActive, $sideItemGroup} from '../../styles/navigation/side.css';
+import {$link} from '../../styles/link.css';
+import {$fixedSide, $fixedSideDirector, $side, $sideItem, $sideItemActionable, $sideItemGroup, $sideItemOptActive} from '../../styles/navigation/side.css';
 import {$compose} from '../../styles/theme/utils';
 
 export const SideDirector: FC<PropsWithChildren> = ({children}) => (
@@ -20,6 +22,23 @@ export const Side: FC<PropsWithChildren> = ({children}) => (
 	</section>
 );
 
-export const SideItem: FC<PropsWithChildren<{isActive?: boolean}>> = ({children, isActive = false}) => (
-	<li className={isActive ? $sideItemActive : $sideItem}>{children}</li>
-);
+export const SideItem: FC<PropsWithChildren<{
+	isActive?: boolean;
+	link?: string;
+}>> = ({children, isActive = false, link}) => {
+	const opt = ' ' + (isActive ? $sideItemOptActive : '');
+
+	if (typeof link === 'string') {
+		return (
+			<Link className={$link} href={link}>
+				<li className={$sideItemActionable + opt}>
+					{children}
+				</li>
+			</Link>
+		);
+	}
+
+	return (
+		<li className={$sideItem + opt}>{children}</li>
+	);
+};

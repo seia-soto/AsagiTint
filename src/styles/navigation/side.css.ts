@@ -44,9 +44,19 @@ export const $sideItem = style({
 
 	borderRadius: '8px',
 	padding: '16px 20px',
+
+	transition: 'color ease .2s, background ease .2s',
 });
 
-export const $sideItemActive = style([$sideItem, {
+export const $sideItemActionable = style([$sideItem, {
+	cursor: 'pointer',
+
+	':hover': {
+		color: platformTheme.color.text,
+	},
+}]);
+
+export const $sideItemOptActive = style({
 	color: platformTheme.color.text,
 	background: platformTheme.color.glassicBackgroundActive,
-}]);
+});
