@@ -1,8 +1,8 @@
-import {type FC, type PropsWithChildren} from 'react';
+import {type FC, type PropsWithChildren, type ReactNode} from 'react';
 
 import {$fixedContentPusher, $fixedNavigation, $navigation, $navigationHeader, $navigationItem, $navigationItemActive, $navigationItemGroup} from '../../styles/navigation/bar.css';
 
-export const Navigation: FC<PropsWithChildren<{title: string}>> = ({children, title}) => (
+export const Navigation: FC<PropsWithChildren<{title: ReactNode | string}>> = ({children, title}) => (
 	<section className={$fixedNavigation}>
 		<nav className={$navigation}>
 			<h1 className={$navigationHeader}>{title}</h1>
@@ -14,8 +14,8 @@ export const Navigation: FC<PropsWithChildren<{title: string}>> = ({children, ti
 );
 
 export const NavigationItem: FC<PropsWithChildren<{
-	isActive: boolean;
-}>> = ({children, isActive}) => (
+	isActive?: boolean;
+}>> = ({children, isActive = false}) => (
 	<li className={isActive ? $navigationItemActive : $navigationItem}>{children}</li>
 );
 
