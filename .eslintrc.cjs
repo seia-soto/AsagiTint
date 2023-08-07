@@ -29,6 +29,7 @@ module.exports = {
 		{
 			rules: {
 				'perfectionist/sort-objects': 0,
+				'@typescript-eslint/naming-convention': 0,
 			},
 			files: [
 				'*.css.ts',

@@ -1,10 +1,12 @@
 import 'modern-normalize/modern-normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {Link} from 'wouter';
 
 import {Navigation, NavigationItem, NavigationPusher} from './components/navigation/bar';
 import {Side, SideDirector, SideItem} from './components/navigation/side';
 import {$contentContainer} from './styles/container.css';
+import {$link} from './styles/link.css';
 import {$fixedSideContentPusher} from './styles/navigation/side.css';
 import {$root} from './styles/theme/theme.css';
 import {$compose} from './styles/theme/utils';
@@ -13,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')!)
 	.render(
 		<React.StrictMode>
 			<div className={$root}>
-				<Navigation title='Asagi Tint'>
+				<Navigation title={<Link className={$link} to='/'>Asagi Tint</Link>}>
 					<NavigationItem>설정</NavigationItem>
 				</Navigation>
 				<NavigationPusher>
