@@ -5,7 +5,7 @@ import useLocation from 'wouter/use-location';
 import {Navigation, NavigationItem, NavigationPusher} from './components/navigation/bar';
 import {Side, SideDirector, SideItem} from './components/navigation/side';
 import {IndexPage} from './pages/index.page';
-import {PyroxPage, pyroxPageProperties} from './pages/pyrox.page';
+import {PyroxPage, pyroxPageProperties} from './pages/pyrox/pyrox.page';
 import {$contentContainer} from './styles/container.css';
 import {$link} from './styles/link.css';
 import {$fixedSideContentPusher} from './styles/navigation/side.css';
@@ -26,7 +26,7 @@ export const Vendor: FC = () => {
 						<SideItem isActive={pyroxPageProperties.isActive(location)} link='/pyrox'>미래시 계획</SideItem>
 					</Side>
 				</SideDirector>
-				<article className={$compose($fixedSideContentPusher, $contentContainer)} style={{height: '10000px'}}>
+				<article className={$compose($fixedSideContentPusher, $contentContainer)}>
 					<Route component={IndexPage} path='/' />
 					<Route component={PyroxPage} path='/pyrox' />
 				</article>

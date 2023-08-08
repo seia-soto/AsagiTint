@@ -2,8 +2,8 @@ import {type FC, type PropsWithChildren} from 'react';
 import {Link} from 'wouter';
 
 import {$container} from '../../styles/container.css';
-import {$link} from '../../styles/link.css';
-import {$fixedSide, $fixedSideDirector, $side, $sideItem, $sideItemActionable, $sideItemGroup, $sideItemOptActive} from '../../styles/navigation/side.css';
+import {$linkOptFluid, $linkTransparent} from '../../styles/link.css';
+import {$fixedSide, $fixedSideDirector, $side, $sideItem, $sideItemActionable, $sideItemGroup, $sideItemOptActionableAreaDirector, $sideItemOptActive} from '../../styles/navigation/side.css';
 import {$compose} from '../../styles/theme/utils';
 
 export const SideDirector: FC<PropsWithChildren> = ({children}) => (
@@ -30,11 +30,11 @@ export const SideItem: FC<PropsWithChildren<{
 
 	if (typeof link === 'string') {
 		return (
-			<Link className={$link} href={link}>
-				<li className={$sideItemActionable + opt}>
-					{children}
-				</li>
-			</Link>
+			<li className={$sideItemActionable + opt}>
+				<Link href={link}>
+					<a className={$compose($linkTransparent, $linkOptFluid, $sideItemOptActionableAreaDirector)}>{children}</a>
+				</Link>
+			</li>
 		);
 	}
 

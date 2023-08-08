@@ -43,18 +43,19 @@ export const $sideItem = style({
 	border: `1px solid ${platformTheme.color.glassicBorder}`,
 
 	borderRadius: '8px',
-	padding: '16px 20px',
 
 	transition: 'color ease .2s, background ease .2s',
 });
 
 export const $sideItemActionable = style([$sideItem, {
-	cursor: 'pointer',
-
 	':hover': {
 		color: platformTheme.color.text,
 	},
 }]);
+
+export const $sideItemOptActionableAreaDirector = style({
+	padding: '16px 20px',
+});
 
 export const $sideItemOptActive = style({
 	color: platformTheme.color.text,

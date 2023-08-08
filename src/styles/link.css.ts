@@ -19,3 +19,13 @@ export const $link = style({
 		textUnderlineOffset: '8px',
 	},
 });
+
+export const $linkTransparent = style({
+	color: 'inherit',
+	textDecoration: 'none',
+});
+
+export const $linkOptFluid = style({
+	display: 'inline-block',
+	width: '100%',
+});
