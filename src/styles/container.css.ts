@@ -10,3 +10,9 @@ export const $container = style({
 export const $contentContainer = style([$container, {
 	padding: '24px 20px',
 }]);
+
+export const $inlineContentContainer = style({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '18px',
+});
