@@ -13,13 +13,13 @@ export const SideDirector: FC<PropsWithChildren> = ({children}) => (
 );
 
 export const Side: FC<PropsWithChildren> = ({children}) => (
-	<section className={$fixedSide}>
+	<aside className={$fixedSide}>
 		<nav className={$side}>
 			<ul className={$sideItemGroup}>
 				{children}
 			</ul>
 		</nav>
-	</section>
+	</aside>
 );
 
 export const SideItem: FC<PropsWithChildren<{
