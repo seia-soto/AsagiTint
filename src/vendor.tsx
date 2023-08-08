@@ -6,7 +6,7 @@ import {Navigation, NavigationItem, NavigationPusher} from './components/navigat
 import {Side, SideDirector, SideItem} from './components/navigation/side';
 import {IndexPage} from './pages/index.page';
 import {PyroxPage, pyroxPageProperties} from './pages/pyrox/pyrox.page';
-import {$contentContainer} from './styles/container.css';
+import {$contentContainer, $inlineContentContainer} from './styles/container.css';
 import {$link} from './styles/link.css';
 import {$fixedSideContentPusher} from './styles/navigation/side.css';
 import {$root} from './styles/theme/theme.css';
@@ -26,10 +26,12 @@ export const Vendor: FC = () => {
 						<SideItem isActive={pyroxPageProperties.isActive(location)} link='/pyrox'>미래시 계획</SideItem>
 					</Side>
 				</SideDirector>
-				<article className={$compose($fixedSideContentPusher, $contentContainer)}>
-					<Route component={IndexPage} path='/' />
-					<Route component={PyroxPage} path='/pyrox' />
-				</article>
+				<section className={$compose($fixedSideContentPusher, $contentContainer)}>
+					<article className={$inlineContentContainer}>
+						<Route component={IndexPage} path='/' />
+						<Route component={PyroxPage} path='/pyrox' />
+					</article>
+				</section>
 			</NavigationPusher>
 		</div>
 	);
