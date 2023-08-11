@@ -1,11 +1,15 @@
-import {type FC, useState} from 'react';
+import {type FC} from 'react';
 
+import {Checkbox} from '../../components/input/checkbox';
+import {Select} from '../../components/input/select';
+import {Divider} from '../../components/layout/divider';
 import {$inlineContentContainer} from '../../styles/container.css';
-import {MaterialSymbolsCheckBox, MaterialSymbolsCheckBoxOutlineBlank, MaterialSymbolsKeyboardArrowDown} from '../../styles/icons/icons';
-import {$input} from '../../styles/input.css';
-import {$listTransparent} from '../../styles/list.css';
+import {$inputTransparent} from '../../styles/input.css';
+import {$compose} from '../../styles/theme/utils';
+import {$fullWidth} from '../../styles/trivials.css';
 import {type PageProperties} from '../_types';
-import {$event, $eventActionGroup, $eventActionItem, $eventBody, $eventCheckboxIcon, $eventDropdownIcon, $eventFooter, $eventIconShell, $eventShell} from './components/event.css';
+import {Event, EventList} from './components/event';
+import {OptionGroup, OptionHeader, OptionItem} from './components/options';
 
 export const pyroxPageProperties: PageProperties = {
 	isActive(url) {
@@ -13,50 +17,61 @@ export const pyroxPageProperties: PageProperties = {
 	},
 };
 
-const List: FC = () => {
-	const [isDropdownActive, setDropdownActive] = useState(false);
-
-	const updateDropdownState = () => {
-		setDropdownActive(value => !value);
-	};
-
-	return (
-		<li className={$listTransparent}>
-			<section className={$event}>
-				<section className={$eventActionGroup}>
-					<label className={$eventIconShell}>
-						<input className={$eventActionItem} type='checkbox' />
-						<MaterialSymbolsCheckBoxOutlineBlank className={$eventCheckboxIcon} />
-						<MaterialSymbolsCheckBox className={$eventCheckboxIcon} data-active />
-					</label>
-					<label className={$eventIconShell}>
-						<input className={$eventActionItem} data-dropdown onChange={updateDropdownState} type='checkbox' />
-						<MaterialSymbolsKeyboardArrowDown className={$eventDropdownIcon} />
-					</label>
-				</section>
-				<section>
-					대충 이벤트 이름
-				</section>
-				<section className={$eventFooter}>
-					총 청휘석 n개
-				</section>
-			</section>
-			<article className={$eventBody} data-active={isDropdownActive}>
-				숨겨진 영역.
-			</article>
-		</li>
-	);
-};
-
 export const PyroxPage: FC = () => (
 	<>
 		<section className={$inlineContentContainer}>
-			<label>
-				<input className={$input} placeholder='현재 청휘석' type='number' />
-			</label>
+			<OptionGroup>
+				<OptionItem className={$fullWidth}>
+					<input className={$compose($inputTransparent, $fullWidth)} placeholder='현재 청휘석 수량' type='text' />
+				</OptionItem>
+			</OptionGroup>
+			<OptionGroup>
+				<OptionItem>
+					<Checkbox defaultChecked>전술경연 대회</Checkbox>
+					<Select>
+						<option value='1'>1위</option>
+						<option value='2'>2위</option>
+						<option value='3'>3~10위</option>
+						<option value='11'>11~100위</option>
+						<option value='101'>101~200위</option>
+						<option value='201'>201~500위</option>
+						<option value='501'>501~1000위</option>
+						<option value='1001'>1001~2000위</option>
+						<option value='2001'>2001~4000위</option>
+						<option value='4001'>4001~8000위</option>
+						<option value='8001'>8001~15000위</option>
+					</Select>
+				</OptionItem>
+				<OptionItem>
+					<Checkbox defaultChecked>총력전</Checkbox>
+					<Select>
+						<option value='platinum'>플래티넘</option>
+						<option value='gold'>골드</option>
+						<option value='silver'>실버</option>
+						<option value='bronze'>키보토스 불법 체류자</option>
+					</Select>
+				</OptionItem>
+			</OptionGroup>
+			<Divider />
+			<OptionHeader>패키지</OptionHeader>
+			<OptionGroup>
+				<OptionItem>
+					<Checkbox>월간 청휘석 패키지</Checkbox>
+					<input className={$compose($inputTransparent)} type='date' />
+				</OptionItem>
+				<OptionItem>
+					<Checkbox>하프 월간 청휘석 패키지</Checkbox>
+					<input className={$compose($inputTransparent)} type='date' />
+				</OptionItem>
+				<OptionItem>
+					<Checkbox>2주 AP 패키지</Checkbox>
+					<input className={$compose($inputTransparent)} type='date' />
+				</OptionItem>
+			</OptionGroup>
 		</section>
-		<ol className={$eventShell}>
-			<List />
-		</ol>
+		<Divider />
+		<EventList>
+			<Event />
+		</EventList>
 	</>
 );

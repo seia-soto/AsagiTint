@@ -23,7 +23,7 @@ export const Vendor: FC = () => {
 			<NavigationPusher>
 				<SideDirector>
 					<Side>
-						<SideItem isActive={pyroxPageProperties.isActive(location)} link='/pyrox'>미래시 계획</SideItem>
+						<SideItem isActive={pyroxPageProperties.isActive(location)} link='/pyrox'>청휘석 계산기</SideItem>
 					</Side>
 				</SideDirector>
 				<section className={$compose($fixedSideContentPusher, $contentContainer)}>

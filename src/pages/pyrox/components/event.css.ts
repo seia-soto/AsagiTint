@@ -1,7 +1,18 @@
 import {style} from '@vanilla-extract/css';
 
-import {$container, $contentContainer} from '../../../styles/container.css';
+import {$inlineContentContainer} from '../../../styles/container.css';
 import {platformTheme} from '../../../styles/theme/theme.css';
+
+export const $eventList = style({
+	listStyle: 'none',
+
+	padding: 0,
+	margin: 0,
+
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '8px',
+});
 
 export const $eventShell = style({
 	padding: 0,
@@ -9,7 +20,7 @@ export const $eventShell = style({
 
 	display: 'flex',
 	flexDirection: 'column',
-	gap: '16px',
+	gap: '8px',
 });
 
 export const $event = style({
@@ -86,14 +97,17 @@ export const $eventDropdownIcon = style({
 	},
 });
 
-export const $eventBody = style({
+export const $eventBody = style([$inlineContentContainer, {
 	transition: 'opacity ease .2s',
 	transitionDelay: '0s, .2s',
 	transformOrigin: 'top',
 
+	padding: '12px',
+	borderRadius: '8px',
+
 	overflow: 'hidden',
 
-	paddingTop: '16px',
+	background: platformTheme.color.backgroundSecondary,
 
 	selectors: {
 		'&[data-active="false"]': {
@@ -102,7 +116,7 @@ export const $eventBody = style({
 			padding: 0,
 		},
 	},
-});
+}]);
 
 export const $eventFooter = style({
 	marginLeft: 'auto',
