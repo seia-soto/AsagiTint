@@ -3,6 +3,7 @@ import {createTheme, style} from '@vanilla-extract/css';
 export const [$platformTheme, platformTheme] = createTheme({
 	color: {
 		background: '#fff',
+		backgroundSecondary: 'hsl(0% 0% 90%)',
 		text: '#000',
 		textSecondary: 'hsl(0 0% 30%)',
 		glassicBackground: 'hsl(0 0% 95% / 20%)',
@@ -14,11 +15,11 @@ export const [$platformTheme, platformTheme] = createTheme({
 export const $root = style([
 	$platformTheme,
 	{
-	// eslint-disable-next-line @typescript-eslint/naming-convention
 		'@media': {
 			'(prefers-color-scheme: dark)': {
 				vars: {
 					[platformTheme.color.background]: '#000',
+					[platformTheme.color.backgroundSecondary]: 'hsl(0 0% 10%)',
 					[platformTheme.color.text]: '#fff',
 					[platformTheme.color.textSecondary]: 'hsl(0 0% 70%)',
 					[platformTheme.color.glassicBackground]: 'hsl(0 0% 5% / 20%)',
