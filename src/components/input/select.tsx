@@ -1,9 +1,10 @@
-import {type FC, type PropsWithChildren, type SelectHTMLAttributes} from 'react';
+import {type FC, type PropsWithChildren, type SelectHTMLAttributes, forwardRef} from 'react';
 
 import {$select} from '../../styles/input.css';
 
-export const Select: FC<PropsWithChildren & SelectHTMLAttributes<HTMLSelectElement>> = ({children, ...props}) => (
-	<select className={$select} {...props}>
+// eslint-disable-next-line react/display-name
+export const Select = forwardRef<HTMLSelectElement, PropsWithChildren & SelectHTMLAttributes<HTMLSelectElement>>(({children, ...props}, ref) => (
+	<select className={$select} ref={ref} {...props}>
 		{children}
 	</select>
-);
+));
