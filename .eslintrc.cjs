@@ -13,6 +13,9 @@ module.exports = {
 				'xo-typescript',
 				'plugin:perfectionist/recommended-natural',
 			],
+			rules: {
+				'perfectionist/sort-enums': 0,
+			},
 			files: [
 				'*.ts',
 				'*.tsx',
