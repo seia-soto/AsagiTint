@@ -70,7 +70,7 @@ export const $checkboxIcon = style({
 			color: platformTheme.color.text,
 		},
 		[`${$checkboxInput}:not(:checked) ~ &[data-active]`]: {
-			transform: 'scale(0)',
+			transform: 'scale(0.35)',
 			opacity: 0,
 		},
 		'svg ~ &': {
