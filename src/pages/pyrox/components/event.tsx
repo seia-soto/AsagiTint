@@ -2,7 +2,7 @@ import {type FC, type LiHTMLAttributes, type PropsWithChildren, useState} from '
 
 import {Checkbox} from '../../../components/input/checkbox';
 import {MaterialSymbolsKeyboardArrowDown} from '../../../styles/icons/icons';
-import {$event, $eventActionGroup, $eventActionItem, $eventBody, $eventDropdownIcon, $eventFooter, $eventIconShell, $eventList, $eventShell} from './event.css';
+import {$event, $eventActionGroup, $eventActionItem, $eventBody, $eventDropdownIcon, $eventFooter, $eventIconShell, $eventList, $eventShell, $eventTitle} from './event.css';
 
 export const EventList: FC<PropsWithChildren> = ({children}) => (
 	<ol className={$eventList}>{children}</ol>
@@ -25,12 +25,12 @@ export const Event: FC<PropsWithChildren & LiHTMLAttributes<HTMLLIElement>> = ({
 						<MaterialSymbolsKeyboardArrowDown className={$eventDropdownIcon} />
 					</label>
 				</section>
-				<section>
+				<span className={$eventTitle}>
 					이벤트 제목
-				</section>
-				<section className={$eventFooter}>
+				</span>
+				<span className={$eventFooter}>
 					0
-				</section>
+				</span>
 			</section>
 			<article className={$eventBody} data-active={isDropdownActive}>
 				{children}

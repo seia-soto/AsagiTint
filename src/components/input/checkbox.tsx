@@ -8,6 +8,6 @@ export const Checkbox: FC<PropsWithChildren & InputHTMLAttributes<HTMLInputEleme
 		<input className={$checkboxInput} type='checkbox' {...props} />
 		<MaterialSymbolsCheckBox className={$checkboxIcon} data-active />
 		<MaterialSymbolsCheckBoxOutlineBlank className={$checkboxIcon} />
-		{children && <section className={$checkboxLabel}>{children}</section>}
+		{children && <span className={$checkboxLabel}>{children}</span>}
 	</label>
 );

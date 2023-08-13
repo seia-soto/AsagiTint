@@ -1,7 +1,7 @@
 import {style} from '@vanilla-extract/css';
 
 import {$contentContainer} from '../container.css';
-import {platformTheme} from '../theme/theme.css';
+import {breakpoints, platformTheme} from '../theme/theme.css';
 
 export const sideWidth = '300px';
 
@@ -14,14 +14,31 @@ export const $fixedSide = style({
 
 	width: sideWidth,
 	height: '100vh',
+
+	'@media': {
+		[breakpoints.half]: {
+			display: 'none',
+		},
+	},
 });
 
 export const $fixedSideContentPusher = style({
-	paddingLeft: sideWidth,
+	'@media': {
+		[breakpoints.full]: {
+			paddingLeft: sideWidth,
+		},
+	},
 });
 
 export const $side = style([$contentContainer, {
 	width: sideWidth,
+
+	// This is duplicate from $sideSide, but leaving as is to keep $side independant from $fixedSide
+	'@media': {
+		[breakpoints.half]: {
+			display: 'none',
+		},
+	},
 }]);
 
 export const $sideItemGroup = style({

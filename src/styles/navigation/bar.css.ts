@@ -13,6 +13,7 @@ export const $fixedNavigation = style([{
 	zIndex: 2,
 
 	backdropFilter: 'blur(16px)',
+	WebkitBackdropFilter: 'blur(16px)',
 	borderBottom: `1px solid ${platformTheme.color.glassicBorder}`,
 	background: platformTheme.color.glassicBackground,
 }]);

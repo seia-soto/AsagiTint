@@ -1,4 +1,4 @@
-import {type FC, type PropsWithChildren} from 'react';
+import {type FC, type HTMLAttributes, type PropsWithChildren} from 'react';
 import {Link} from 'wouter';
 
 import {$container} from '../../styles/container.css';
@@ -6,14 +6,14 @@ import {$linkOptFluid, $linkTransparent} from '../../styles/link.css';
 import {$fixedSide, $fixedSideDirector, $side, $sideItem, $sideItemActionable, $sideItemGroup, $sideItemOptActionableAreaDirector, $sideItemOptActive} from '../../styles/navigation/side.css';
 import {$compose} from '../../styles/theme/utils';
 
-export const SideDirector: FC<PropsWithChildren> = ({children}) => (
-	<div className={$compose($container, $fixedSideDirector)}>
+export const SideDirector: FC<PropsWithChildren & HTMLAttributes<HTMLDivElement>> = ({children, className = '', ...props}) => (
+	<div className={$compose($container, $fixedSideDirector, className)} {...props}>
 		{children}
 	</div>
 );
 
-export const Side: FC<PropsWithChildren> = ({children}) => (
-	<aside className={$fixedSide}>
+export const Side: FC<PropsWithChildren & HTMLAttributes<HTMLElement>> = ({children, className = '', ...props}) => (
+	<aside className={$fixedSide} {...props}>
 		<nav className={$side}>
 			<ul className={$sideItemGroup}>
 				{children}

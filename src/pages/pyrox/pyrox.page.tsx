@@ -22,7 +22,7 @@ export const PyroxPage: FC = () => (
 		<section className={$inlineContentContainer}>
 			<OptionGroup>
 				<OptionItem className={$fullWidth}>
-					<input className={$compose($inputTransparent, $fullWidth)} placeholder='현재 청휘석 수량' type='text' />
+					<input className={$compose($inputTransparent, $fullWidth)} inputMode='numeric' pattern='[0-9]*' placeholder='현재 청휘석 수량' type='number' />
 				</OptionItem>
 			</OptionGroup>
 			<OptionGroup>

@@ -38,7 +38,7 @@ export const $eventActionGroup = style({
 });
 
 export const $eventActionItem = style({
-	width: 0,
+	display: 'none',
 });
 
 export const $eventIconShell = style({
@@ -95,6 +95,10 @@ export const $eventDropdownIcon = style({
 			transform: 'rotate(180deg)',
 		},
 	},
+});
+
+export const $eventTitle = style({
+	userSelect: 'none',
 });
 
 export const $eventBody = style([$inlineContentContainer, {
